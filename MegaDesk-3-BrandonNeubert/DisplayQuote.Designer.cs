@@ -302,7 +302,7 @@
             this.Controls.Add(this.Material1);
             this.Controls.Add(this.OrderDetails);
             this.Name = "DisplayQuote";
-            this.Text = "Form1";
+            this.Text = "Display Quote";
             this.ResumeLayout(false);
             this.PerformLayout();
 

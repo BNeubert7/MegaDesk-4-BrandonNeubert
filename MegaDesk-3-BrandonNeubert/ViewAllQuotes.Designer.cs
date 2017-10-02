@@ -37,7 +37,7 @@
             this.ViewAQuotes.Name = "ViewAQuotes";
             this.ViewAQuotes.ReadOnly = true;
             this.ViewAQuotes.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.ViewAQuotes.Size = new System.Drawing.Size(460, 210);
+            this.ViewAQuotes.Size = new System.Drawing.Size(460, 537);
             this.ViewAQuotes.TabIndex = 0;
             this.ViewAQuotes.Text = "";
             // 
@@ -45,10 +45,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 261);
+            this.ClientSize = new System.Drawing.Size(484, 561);
             this.Controls.Add(this.ViewAQuotes);
             this.Name = "ViewAllQuotes";
-            this.Text = "Form1";
+            this.Text = "View All Quotes";
             this.ResumeLayout(false);
 
         }

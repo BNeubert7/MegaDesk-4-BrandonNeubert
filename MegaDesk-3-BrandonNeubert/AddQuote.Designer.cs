@@ -220,7 +220,7 @@
             this.Controls.Add(this.DrawerCtLabel);
             this.Controls.Add(this.WidthLabel);
             this.Name = "AddQuote";
-            this.Text = "Form1";
+            this.Text = "Add New Quote";
             ((System.ComponentModel.ISupportInitialize)(this.variableDrawerCount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

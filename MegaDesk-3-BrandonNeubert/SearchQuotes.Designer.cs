@@ -46,7 +46,7 @@
             "Veneer"});
             this.SurfaceSearch.Location = new System.Drawing.Point(162, 20);
             this.SurfaceSearch.Name = "SurfaceSearch";
-            this.SurfaceSearch.Size = new System.Drawing.Size(221, 32);
+            this.SurfaceSearch.Size = new System.Drawing.Size(212, 32);
             this.SurfaceSearch.TabIndex = 0;
             // 
             // label1
@@ -61,18 +61,18 @@
             // 
             // viewSQuotes
             // 
-            this.viewSQuotes.Location = new System.Drawing.Point(16, 67);
+            this.viewSQuotes.Location = new System.Drawing.Point(12, 58);
             this.viewSQuotes.Name = "viewSQuotes";
             this.viewSQuotes.ReadOnly = true;
             this.viewSQuotes.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.viewSQuotes.Size = new System.Drawing.Size(465, 456);
+            this.viewSQuotes.Size = new System.Drawing.Size(465, 491);
             this.viewSQuotes.TabIndex = 2;
             this.viewSQuotes.Text = "";
             // 
             // SearchAllQuotes
             // 
             this.SearchAllQuotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchAllQuotes.Location = new System.Drawing.Point(389, 20);
+            this.SearchAllQuotes.Location = new System.Drawing.Point(380, 20);
             this.SearchAllQuotes.Name = "SearchAllQuotes";
             this.SearchAllQuotes.Size = new System.Drawing.Size(92, 32);
             this.SearchAllQuotes.TabIndex = 3;
@@ -84,13 +84,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 535);
+            this.ClientSize = new System.Drawing.Size(484, 561);
             this.Controls.Add(this.SearchAllQuotes);
             this.Controls.Add(this.viewSQuotes);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SurfaceSearch);
             this.Name = "SearchQuotes";
-            this.Text = "SearchQuotes";
+            this.Text = "Search Quotes";
             this.ResumeLayout(false);
             this.PerformLayout();
 
