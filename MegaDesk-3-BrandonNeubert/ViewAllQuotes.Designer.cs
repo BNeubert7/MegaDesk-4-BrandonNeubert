@@ -1,6 +1,6 @@
 ﻿namespace MegaDesk_3_BrandonNeubert
 {
-    partial class Form1
+    partial class ViewAllQuotes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.ViewAQuotes = new System.Windows.Forms.RichTextBox();
+            this.SuspendLayout();
+            // 
+            // ViewAQuotes
+            // 
+            this.ViewAQuotes.Location = new System.Drawing.Point(12, 12);
+            this.ViewAQuotes.Name = "ViewAQuotes";
+            this.ViewAQuotes.ReadOnly = true;
+            this.ViewAQuotes.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.ViewAQuotes.Size = new System.Drawing.Size(460, 210);
+            this.ViewAQuotes.TabIndex = 0;
+            this.ViewAQuotes.Text = "";
+            // 
+            // ViewAllQuotes
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(484, 261);
+            this.Controls.Add(this.ViewAQuotes);
+            this.Name = "ViewAllQuotes";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.RichTextBox ViewAQuotes;
     }
 }
-
