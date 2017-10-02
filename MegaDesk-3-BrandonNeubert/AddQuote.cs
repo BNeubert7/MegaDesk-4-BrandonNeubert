@@ -67,7 +67,7 @@ namespace MegaDesk_3_BrandonNeubert
         }
         private void variableWidth_Validating(object sender, CancelEventArgs e)
         {
-            try {
+            try { // Try/Catch so that if this form item is skipped an error is not thrown.
                 string errorMsgWidth = "The width must be between 24\" and 96\". Please try again.";
                 int widthTest = Convert.ToInt32(variableWidth.Text);
                 if (widthTest < 24 || widthTest > 96)
@@ -77,9 +77,7 @@ namespace MegaDesk_3_BrandonNeubert
                 }
             }
             catch (Exception)
-            {
-
-            }
+            {}
             
         }
 
@@ -98,7 +96,7 @@ namespace MegaDesk_3_BrandonNeubert
         private void variableDepth_Validating(object sender, CancelEventArgs e)
         {
             try
-            {
+            { // Try/Catch so that if this form item is skipped an error is not thrown.
                 string errorMsgDepth = "The depth must be between 12\" and 48\". Please try again.";
                 int depthTest = Convert.ToInt32(variableDepth.Text);
                 if (depthTest < 12 || depthTest > 48)
@@ -108,9 +106,7 @@ namespace MegaDesk_3_BrandonNeubert
                 }
             }
             catch (Exception)
-            {
-
-            }
+            {}
             
         }
 

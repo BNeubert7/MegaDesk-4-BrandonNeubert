@@ -17,7 +17,9 @@ namespace MegaDesk_3_BrandonNeubert
             InitializeComponent();
         }
 
-        //Please note I am never hiding the Main Menu, but further sub-forms such as (displayQuotes) will hide prior forms (addQuote)
+        //Please note I am never hiding the Main Menu, but further sub-forms such
+        //as (displayQuotes) will hide prior forms (addQuote)
+
         // Click the AddQuote button
         private void AddNewQuote_Click(object sender, EventArgs e)
         {
