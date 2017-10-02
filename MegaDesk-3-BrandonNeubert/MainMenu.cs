@@ -16,7 +16,9 @@ namespace MegaDesk_3_BrandonNeubert
         {
             InitializeComponent();
         }
-// Click the AddQuote button
+
+        //Please note I am never hiding the Main Menu, but further sub-forms such as (displayQuotes) will hide prior forms (addQuote)
+        // Click the AddQuote button
         private void AddNewQuote_Click(object sender, EventArgs e)
         {
             AddQuote addQuote = new AddQuote();
@@ -41,7 +43,5 @@ namespace MegaDesk_3_BrandonNeubert
         {
             Application.Exit();
         }
-
-
     }
 }
