@@ -35,7 +35,7 @@ namespace MegaDesk_3_BrandonNeubert
         private void SearchAllQuotes_Click(object sender, EventArgs e)
         {
             viewSQuotes.Clear();
-            using (StreamReader sr = new StreamReader("quotes.txt"))
+            using (StreamReader sr = new StreamReader("quotes.json"))
             {
                 while (sr.Peek() >= 0)
                 {

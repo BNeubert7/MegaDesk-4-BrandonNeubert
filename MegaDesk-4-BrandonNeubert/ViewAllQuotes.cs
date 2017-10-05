@@ -33,13 +33,11 @@ namespace MegaDesk_3_BrandonNeubert
         {
             InitializeComponent();
             
-            using (StreamReader sr = new StreamReader("quotes.txt"))
+            using (StreamReader sr = new StreamReader("quotes.json"))
             {
                 while (sr.Peek() >= 0)
                 {
                     string json = sr.ReadLine();
-                    JsonSerializer serializer = new JsonSerializer();
-                    //DeskQuote printQuote = (DeskQuote)serializer.Deserialize(json,typeof(DeskQuote);
                     DeskQuote printQuote = JsonConvert.DeserializeObject<DeskQuote>(json);
 
                     ViewAQuotes.AppendText(

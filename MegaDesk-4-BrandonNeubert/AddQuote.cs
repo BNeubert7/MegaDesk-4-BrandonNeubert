@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,16 +13,27 @@ namespace MegaDesk_3_BrandonNeubert
 {
     public partial class AddQuote : Form
     {
+
+        private List<string> materials;
+
+
         public AddQuote()
         {
             InitializeComponent();
+            materials = new List<string>();
+
+            foreach (Desk.SurfaceMaterials surfaceMaterials in Enum.GetValues(typeof(Desk.SurfaceMaterials)))
+            {
+                materials.Add(Convert.ToString(surfaceMaterials));
+            }
+            variableSurfaceMaterial.DataSource = materials;
         }
 
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
             //Try to submit, if something goes wrong then catch and notify the user.
-            try
-            {
+//            try
+//            {
                 // Read Values
                 string FirstName = nameFirstForm.Text;
                 string LastName = nameLastForm.Text;
@@ -46,11 +58,11 @@ namespace MegaDesk_3_BrandonNeubert
                 DisplayQuote DisplayQuote = new DisplayQuote(newDeskQuote1);
                 DisplayQuote.Show();
                 this.Hide();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("There is an issue in one of your entries. Please ensure that values are entered correctly.");
-            }
+//            }
+//            catch (Exception)
+//            {
+//                MessageBox.Show("There is an issue in one of your entries. Please ensure that values are entered correctly.");
+//            }
         }
 
         //Check the values of width for the right range and integer entries
@@ -77,8 +89,8 @@ namespace MegaDesk_3_BrandonNeubert
                 }
             }
             catch (Exception)
-            {}
-            
+            { }
+
         }
 
         // Check the values of depth for the right range and integer entries
@@ -106,8 +118,8 @@ namespace MegaDesk_3_BrandonNeubert
                 }
             }
             catch (Exception)
-            {}
-            
+            { }
+
         }
 
         // Check the drawer count
@@ -120,48 +132,118 @@ namespace MegaDesk_3_BrandonNeubert
                 variableDrawerCount.Value = 7;
             }
         }
-        
+
         // Calculator for shipping Costs
+        //double CalculateShipping(int inShippingDays, Desk inDesk)
+        //{
+        //    int shippingDays = inShippingDays;
+        //    Desk newDesk1 = inDesk;
+        //    double DeskArea = inDesk.DeskAreaCalc();
+        //    double ShippingCost;
+
+        //    int i;
+        //    if (DeskArea < 1000)
+        //    { i = 0;
+        //    }
+        //    else if (DeskArea > 1000 && DeskArea < 2000)
+        //    { i = 1;
+        //    }
+        //    else
+        //    { i = 2;
+        //    }
+
+        //    switch (shippingDays)
+        //    {
+        //        case 3:
+        //            double[] ThreeDay = new double[3] { 60, 70, 80 };
+        //            ShippingCost = ThreeDay[i];
+        //            break;
+        //        case 5:
+        //            double[] FiveDay = new double[3] { 40, 50, 60 };
+        //            ShippingCost = FiveDay[i];
+        //            break;
+        //        case 7:
+        //            double[] SevenDay = new double[3] { 30, 35, 40 };
+        //            ShippingCost = SevenDay[i];
+        //            break;
+        //        case 14:
+        //            double[] FourteenDay = new double[3] { 0, 0, 0 };
+        //            ShippingCost = FourteenDay[i];
+        //            break;
+        //        default:
+        //            throw new Exception("Bad Input");
+        //            break;
+        //    }
+
+        //    return ShippingCost;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         double CalculateShipping(int inShippingDays, Desk inDesk)
         {
-            int shippingDays = inShippingDays;
-            Desk newDesk1 = inDesk;
+            double shippingCost = 0.0;
+            double[,] priceArray = new double[3,3];
+            StreamReader sr1 = new StreamReader("rushOrderPrices.txt");
             double DeskArea = inDesk.DeskAreaCalc();
-            double ShippingCost;
 
-            int i;
-            if (DeskArea < 1000)
-                { i = 0;}
-            else if (DeskArea > 1000 && DeskArea < 2000)
-                { i = 1;}
-            else
-                { i = 2;}
+            while (sr1.Peek() >= 0)
+            {
+                for (int row = 0; row < 3; row++)
+                {
+                    for (int column = 0; column < 3; column++)
+                    {
+                        priceArray[row,column] = Convert.ToDouble(sr1.ReadLine());
+                    }
+                }
+            }
 
-            switch (shippingDays)
+            int findRow = 0;
+            int findColumn = 0;
+
+            switch (inShippingDays)
             {
                 case 3:
-                    double[] ThreeDay = new double[3] { 60, 70, 80 };
-                    ShippingCost = ThreeDay[i];
+                    findRow = 0;
                     break;
                 case 5:
-                    double[] FiveDay = new double[3] { 40, 50, 60 };
-                    ShippingCost = FiveDay[i];
+                    findRow = 1;
                     break;
                 case 7:
-                    double[] SevenDay = new double[3] { 30, 35, 40 };
-                    ShippingCost = SevenDay[i];
+                    findRow = 2;
                     break;
                 case 14:
-                    double[] FourteenDay = new double[3] { 0, 0, 0 };
-                    ShippingCost = FourteenDay[i];
+                    shippingCost = 0.0;
                     break;
                 default:
                     throw new Exception("Bad Input");
                     break;
             }
 
-            return ShippingCost;
+            if (DeskArea < 1000)
+            { findColumn = 0; }
+            else if (DeskArea < 2000)
+            { findColumn = 1; }
+            else
+            { findColumn = 2; }
+
+            if (inShippingDays != 14)
+            { shippingCost = priceArray[findRow,findColumn]; }
+
+            sr1.Close();
+            return shippingCost;
         }
     }
 }
- 

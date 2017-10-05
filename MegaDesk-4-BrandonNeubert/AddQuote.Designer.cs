@@ -125,12 +125,6 @@
             this.variableSurfaceMaterial.DisplayMember = "SurfaceMaterials";
             this.variableSurfaceMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.variableSurfaceMaterial.FormattingEnabled = true;
-            this.variableSurfaceMaterial.Items.AddRange(new object[] {
-            "Oak",
-            "Laminate",
-            "Pine",
-            "Rosewood",
-            "Veneer"});
             this.variableSurfaceMaterial.Location = new System.Drawing.Point(181, 153);
             this.variableSurfaceMaterial.Name = "variableSurfaceMaterial";
             this.variableSurfaceMaterial.Size = new System.Drawing.Size(121, 28);
