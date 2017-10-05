@@ -51,7 +51,6 @@ namespace MegaDesk_3_BrandonNeubert
         private void SaveQuit_Click(object sender, EventArgs e)
         {
             File.AppendAllText("quotes.txt",JsonConvert.SerializeObject(CurrentDeskQuote) + "\r\n");
-            //File.AppendAllText("quotes.txt", JsonConvert.SerializeObject(Environment.NewLine));
             Close();
         }     
     }
